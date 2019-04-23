@@ -37,6 +37,6 @@ void sub_b0(auto a_0, auto a_1) {
     if ((a_0 == 235) || (a_0 == 0)) {
         return ;
     }
-    g_18A70._f1C4F[a_0/*1*/] = 1;
-    g_18A70._f1C4F._fEC[a_0/*1*/] = GAMEPLAY::GET_GAME_TIMER() + a_1;
+    game_state._f1C4F[a_0/*1*/] = 1;
+    game_state._f1C4F._fEC[a_0/*1*/] = GAMEPLAY::GET_GAME_TIMER() + a_1;
 }

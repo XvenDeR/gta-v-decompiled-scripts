@@ -12432,7 +12432,7 @@ void sub_150a3(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4, auto a_5, auto 
     if (a_0._f8 > a_0._f9) {
         a_0._f8 = a_0._f9;
     }
-    if (g_10EC5) {
+    if (is_in_transition) {
         if (GAMEPLAY::ARE_STRINGS_EQUAL(v_14, "am_hot_target")) {
             v_15/*{12}*/ = a_0;
             v_15._fC = a_C;

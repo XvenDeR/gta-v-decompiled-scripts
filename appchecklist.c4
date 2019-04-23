@@ -19,8 +19,8 @@ void main() {
     sub_15c1();
     while (1) {
         SYSTEM::WAIT(0);
-        if (g_384D._f1 != 9) {
-            switch (g_384D._f1) {
+        if (current_character._f1 != 9) {
+            switch (current_character._f1) {
             case 7:
                 sub_1454();
                 if (l_77 == 0) {
@@ -43,8 +43,8 @@ void main() {
                     if ((l_77 == 2) || (l_77 == 1)) {
                         sub_177c(g_383A, "SET_DATA_SLOT_EMPTY", 18.0, 0xbf800000, 0xbf800000, 0xbf800000, 0xbf800000);
                         sub_15c1();
-                        if (g_384D._f1 > 3) {
-                            g_384D._f1 = 7;
+                        if (current_character._f1 > 3) {
+                            current_character._f1 = 7;
                         }
                     }
                     if (l_77 == 3) {
@@ -70,7 +70,7 @@ void main() {
 }
 
 auto sub_16a() {
-    if ((((g_384D._f1 == 1) || (g_384D._f1 == 3)) || (g_384D._f1 == 0)) || (g_3815 == 1)) {
+    if ((((current_character._f1 == 1) || (current_character._f1 == 3)) || (current_character._f1 == 0)) || (g_3815 == 1)) {
         g_3840 = 1;
         return 1;
     } else { 
@@ -83,7 +83,7 @@ void sub_1ad() {
 }
 
 auto sub_1b9() {
-    if ((g_B49 == 1) || (g_384D._f1 < 7)) {
+    if ((g_B49 == 1) || (current_character._f1 < 7)) {
         g_3840 = 1;
         return 1;
     } else { 
@@ -236,8 +236,8 @@ void sub_5b2() {
             }
             v_2 = GRAPHICS::_2DE7EFA66B906036(l_81);
             l_75 = l_78[v_2/*1*/];
-            if (g_384D._f1 > 3) {
-                g_384D._f1 = 8;
+            if (current_character._f1 > 3) {
+                current_character._f1 = 8;
             }
             sub_177c(g_383A, "SET_DATA_SLOT_EMPTY", 18.0, 0xbf800000, 0xbf800000, 0xbf800000, 0xbf800000);
             if (l_75 == 1) {}
@@ -316,7 +316,7 @@ void sub_7fb() {
 }
 
 auto sub_80f() {
-    if (g_10EC5) {
+    if (is_in_transition) {
         return 0;
     } else { 
         v_4 = 0;
@@ -344,8 +344,8 @@ void sub_856() {
                 SYSTEM::WAIT(0);
             }
             l_80 = GRAPHICS::_2DE7EFA66B906036(l_81);
-            if (g_384D._f1 > 3) {
-                g_384D._f1 = 8;
+            if (current_character._f1 > 3) {
+                current_character._f1 = 8;
                 if (l_80 == 0) {
                     l_77 = 1;
                     sub_8cb();
@@ -538,7 +538,7 @@ void sub_cdf() {
         }
     }
     for (v_2 = 0; v_2 < 63; v_2 += 1) {
-        if ((GAMEPLAY::IS_BIT_SET(g_18A70._f4338[v_2/*6*/], 0) && GAMEPLAY::IS_BIT_SET(g_18A70._f4338[v_2/*6*/], 1)) && (!GAMEPLAY::IS_BIT_SET(g_18A70._f4338[v_2/*6*/], 3))) {
+        if ((GAMEPLAY::IS_BIT_SET(game_state._f4338[v_2/*6*/], 0) && GAMEPLAY::IS_BIT_SET(game_state._f4338[v_2/*6*/], 1)) && (!GAMEPLAY::IS_BIT_SET(game_state._f4338[v_2/*6*/], 3))) {
             if (g_151A8 < 52) {
                 g_150D7[g_151A8/*4*/]/*"16"*/ = sub_f66(v_2);
                 g_151A8 += 1;
@@ -548,7 +548,7 @@ void sub_cdf() {
         }
     }
     for (v_2 = 0; v_2 < 20; v_2 += 1) {
-        if (GAMEPLAY::IS_BIT_SET(g_18A70._f1E27._f63._fDB[0/*1*/], v_2)) {
+        if (GAMEPLAY::IS_BIT_SET(game_state._f1E27._f63._fDB[0/*1*/], v_2)) {
             if (g_151A8 < 52) {
                 g_150D7[g_151A8/*4*/]/*"16"*/ = sub_e1a(v_2);
                 g_151A8 += 1;
@@ -838,7 +838,7 @@ auto<2> sub_13eb(auto a_0) {
     v_3/*"8"*/ = "M_";
     v_3/*8*/ += g_14133[a_0/*34*/]._f8;
     if (a_0 == 90) {
-        switch (g_18A70._f1E27._f63._fCD[7/*1*/]) {
+        switch (game_state._f1E27._f63._fCD[7/*1*/]) {
         case 1:
             v_3/*8*/ += "A";
             break;

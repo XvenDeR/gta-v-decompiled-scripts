@@ -21,13 +21,13 @@ void main() {
     g_418A = 0;
     g_38EA = 0;
     sub_905();
-    g_384D._f1 = 7;
+    current_character._f1 = 7;
     sub_8a2(g_383A, "DISPLAY_VIEW", 14.0, 0xbf800000, 0xbf800000, 0xbf800000, 0xbf800000);
     sub_847(g_383A, "SET_HEADER", "CELL_4", 0, 0, 0, 0);
     while (1) {
         SYSTEM::WAIT(0);
-        if (g_384D._f1 != 9) {
-            switch (g_384D._f1) {
+        if (current_character._f1 != 9) {
+            switch (current_character._f1) {
             case 7:
                 if (g_418A == 0) {
                     sub_6e0();
@@ -53,7 +53,7 @@ void main() {
             } else if (sub_1a6(2, g_382D, 0)) {
                 g_3837 = 1;
                 g_418A = 0;
-                g_384D._f1 = 7;
+                current_character._f1 = 7;
                 sub_905();
                 sub_8a2(g_383A, "DISPLAY_VIEW", 14.0, 0xbf800000, 0xbf800000, 0xbf800000, 0xbf800000);
                 sub_847(g_383A, "SET_HEADER", "CELL_4", 0, 0, 0, 0);
@@ -66,7 +66,7 @@ void main() {
 }
 
 auto sub_163() {
-    if ((((g_384D._f1 == 1) || (g_384D._f1 == 3)) || (g_384D._f1 == 0)) || (g_3815 == 1)) {
+    if ((((current_character._f1 == 1) || (current_character._f1 == 3)) || (current_character._f1 == 0)) || (g_3815 == 1)) {
         g_3840 = 1;
         return 1;
     } else { 
@@ -96,7 +96,7 @@ void sub_218() {
 }
 
 auto sub_224() {
-    if ((g_B49 == 1) || (g_384D._f1 < 7)) {
+    if ((g_B49 == 1) || (current_character._f1 < 7)) {
         g_3840 = 1;
         return 1;
     } else { 
@@ -114,7 +114,7 @@ void sub_277() {
     l_1E = l_1C;
     sub_4c1(255, 255, 255, 205);
     sub_497();
-    sub_47f(l_1D, l_1E, &g_18A70._f7F07[g_4268[l_19/*9*/]/*29*/]._f3, 0);
+    sub_47f(l_1D, l_1E, &game_state._f7F07[g_4268[l_19/*9*/]/*29*/]._f3, 0);
     l_1D += 0.07;
     sub_4c1(255, 255, 255, 205);
     if (g_4268[l_19/*9*/]._f2._f1 < 10) {
@@ -179,7 +179,7 @@ void sub_500() {
         sub_57e(g_383A, "SET_DATA_SLOT", 15.0, 0.0, -1.0, -1.0, -1.0, "CELL_287", "CELL_280", "CELL_285", "CELL_284", 0);
         sub_8a2(g_383A, "DISPLAY_VIEW", 15.0, 0xbf800000, 0xbf800000, 0xbf800000, 0xbf800000);
         sub_847(g_383A, "SET_HEADER", "CELL_4", 0, 0, 0, 0);
-        g_384D._f1 = 8;
+        current_character._f1 = 8;
         g_418A = 1;
     }
 }
@@ -270,7 +270,7 @@ void sub_6e0() {
         if (v_2 == l_18) {
             sub_497();
         }
-        sub_47f(l_1D, l_1E, &g_18A70._f7F07[g_4268[l_12[v_2/*1*/]/*9*/]/*29*/]._f3, 0);
+        sub_47f(l_1D, l_1E, &game_state._f7F07[g_4268[l_12[v_2/*1*/]/*9*/]/*29*/]._f3, 0);
         l_1D += 0.07;
         sub_4c1(255, 255, 255, 205);
         if (g_4268[l_12[v_2/*1*/]/*9*/]._f2._f1 < 10) {

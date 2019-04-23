@@ -5257,7 +5257,7 @@ auto sub_6f86() {
 
 auto sub_7041(auto a_0, auto a_1) {
     if (a_0) {
-        if (GAMEPLAY::IS_BIT_SET(g_18A70._f29C._f2D4, 2)) {
+        if (GAMEPLAY::IS_BIT_SET(game_state._f29C._f2D4, 2)) {
             return 1;
         }
     }

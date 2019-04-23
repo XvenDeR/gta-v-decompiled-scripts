@@ -87,7 +87,7 @@ void main() {
                 if (g_10) {
                     v_27 = 1;
                 }
-                if ((((((((((((!v_27) && (!sub_836(0))) && (!PED::IS_PED_IN_COVER(PLAYER::PLAYER_PED_ID(), 0))) && (!sub_81c())) && ENTITY::IS_ENTITY_AT_COORD(PLAYER::PLAYER_PED_ID(), v_20, 0.6, 0.6, 0.8, 0, 1, 1)) && (INTERIOR::GET_ROOM_KEY_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) == INTERIOR::GET_ROOM_KEY_FROM_ENTITY(v_2))) && (!GAMEPLAY::IS_BIT_SET(g_240005, 15))) && (!sub_7ef())) && (!(g_10EC5 && sub_7e3()))) && (!((!g_10EC5) && sub_7d7()))) && (!(g_10EC5 && GAMEPLAY::IS_BIT_SET(g_189F36._fE, 24)))) && (!((g_10EC5 && sub_7c1()) && sub_775()))) {
+                if ((((((((((((!v_27) && (!sub_836(0))) && (!PED::IS_PED_IN_COVER(PLAYER::PLAYER_PED_ID(), 0))) && (!sub_81c())) && ENTITY::IS_ENTITY_AT_COORD(PLAYER::PLAYER_PED_ID(), v_20, 0.6, 0.6, 0.8, 0, 1, 1)) && (INTERIOR::GET_ROOM_KEY_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) == INTERIOR::GET_ROOM_KEY_FROM_ENTITY(v_2))) && (!GAMEPLAY::IS_BIT_SET(g_240005, 15))) && (!sub_7ef())) && (!(is_in_transition && sub_7e3()))) && (!((!is_in_transition) && sub_7d7()))) && (!(is_in_transition && GAMEPLAY::IS_BIT_SET(g_189F36._fE, 24)))) && (!((is_in_transition && sub_7c1()) && sub_775()))) {
                     if (l_2E == -1) {
                         if (v_3) {
                             sub_65f(&l_2E, 1, "MPLA_BILL", 0, 0, 0);
@@ -181,10 +181,10 @@ void sub_474(auto a_0) {
     if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${appinternet}) > 0) {
         return ;
     }
-    if (g_10EC5 && sub_7e3()) {
+    if (is_in_transition && sub_7e3()) {
         return ;
     }
-    if ((!g_10EC5) && sub_7d7()) {
+    if ((!is_in_transition) && sub_7d7()) {
         return ;
     }
     if (!SCRIPT::HAS_SCRIPT_LOADED("appInternet")) {
@@ -346,7 +346,7 @@ auto sub_81c() {
 
 auto sub_836(auto a_0) {
     if (a_0 == 1) {
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             if (GAMEPLAY::IS_BIT_SET(g_8EB, 14)) {
                 return 1;
             } else { 
@@ -359,7 +359,7 @@ auto sub_836(auto a_0) {
         if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${cellphone_flashhand}) > 0) {
             return 1;
         }
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             return 1;
         } else { 
             return 0;

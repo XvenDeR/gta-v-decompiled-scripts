@@ -66,7 +66,7 @@ void main() {
                 if (UI::DOES_BLIP_EXIST(l_D5)) {
                     if (l_D5 != l_D6) {
                         if (UI::IS_MISSION_CREATOR_BLIP(l_D5)) {
-                            if (g_10EC5) {
+                            if (is_in_transition) {
                                 if (sub_5289(l_D5, &l_D7, &l_DA, &l_EA, &l_FA, &l_10A, &l_10B, &l_10C, &l_10D, &l_10E, &l_10F, &l_110, &l_111, &l_112, &v_2, &v_3, &l_113, &l_114, &l_115, &l_11B, &l_11C, &l_11D, &l_135, &l_11E, &l_11F, &l_136)) {
                                     if (sub_51ea(l_11B, &l_145)) {
                                         sub_4426(1, 65, l_D7, l_111, &l_DA, &l_EA, sub_51ba(l_11B, 500), l_110, l_10A, l_10B, l_10C, l_10D, l_10E, l_10F, l_112, l_115, &l_120, l_113, l_114, l_11C, 0, l_135, 1, l_136);
@@ -93,7 +93,7 @@ void main() {
                         UI::_SET_PLAYER_BLIP_POSITION_THIS_FRAME(g_10A5A._f242, g_10A5A._f242._f1);
                     }
                 }
-                if (g_10EC5) {
+                if (is_in_transition) {
                     sub_3a87();
                     sub_15fd();
                     sub_2b2();

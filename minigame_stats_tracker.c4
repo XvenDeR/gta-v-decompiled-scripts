@@ -107,8 +107,8 @@ void main() {
             GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION_VOID();
             sub_587(1);
             sub_532(&l_2F);
-            if (!sub_523(g_18A70._f4543, 4096)) {
-                sub_502(&g_18A70._f4543, 4096);
+            if (!sub_523(game_state._f4543, 4096)) {
+                sub_502(&game_state._f4543, 4096);
             }
             l_2D = 3;
             break;
@@ -198,7 +198,7 @@ void sub_587(auto a_0) {
     if (g_38EB) {
         sub_61e(0, 0);
     }
-    if ((g_384D._f1 == 10) || (g_384D._f1 == 9)) {
+    if ((current_character._f1 == 10) || (current_character._f1 == 9)) {
         GAMEPLAY::SET_BIT(&g_8EC, 16);
     }
     if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING()) {
@@ -211,12 +211,12 @@ void sub_587(auto a_0) {
         GAMEPLAY::CLEAR_BIT(&g_8EB, 30);
     }
     if (!sub_5f7()) {
-        g_384D._f1 = 3;
+        current_character._f1 = 3;
     }
 }
 
 auto sub_5f7() {
-    if ((g_384D._f1 == 1) || (g_384D._f1 == 0)) {
+    if ((current_character._f1 == 1) || (current_character._f1 == 0)) {
         return 1;
     } else { 
         return 0;
@@ -246,7 +246,7 @@ void sub_61e(auto a_0, auto a_1) {
 
 auto sub_692(auto a_0) {
     if (a_0 == 1) {
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             if (GAMEPLAY::IS_BIT_SET(g_8EB, 14)) {
                 return 1;
             } else { 
@@ -259,7 +259,7 @@ auto sub_692(auto a_0) {
         if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${cellphone_flashhand}) > 0) {
             return 1;
         }
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             return 1;
         } else { 
             return 0;

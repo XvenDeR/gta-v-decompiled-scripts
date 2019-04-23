@@ -11536,7 +11536,7 @@ void sub_192ab() {
 }
 
 void sub_19319() {
-    if (!(g_384D._f1 == 1)) {
+    if (!(current_character._f1 == 1)) {
         if (sub_1944c(0)) {
             sub_19341(0);
         }
@@ -11548,7 +11548,7 @@ void sub_19341(auto a_0) {
     if (g_38EB) {
         sub_193d8(0, 0);
     }
-    if ((g_384D._f1 == 10) || (g_384D._f1 == 9)) {
+    if ((current_character._f1 == 10) || (current_character._f1 == 9)) {
         GAMEPLAY::SET_BIT(&g_8EC, 16);
     }
     if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING()) {
@@ -11561,12 +11561,12 @@ void sub_19341(auto a_0) {
         GAMEPLAY::CLEAR_BIT(&g_8EB, 30);
     }
     if (!sub_193b1()) {
-        g_384D._f1 = 3;
+        current_character._f1 = 3;
     }
 }
 
 auto sub_193b1() {
-    if ((g_384D._f1 == 1) || (g_384D._f1 == 0)) {
+    if ((current_character._f1 == 1) || (current_character._f1 == 0)) {
         return 1;
     } else { 
         return 0;
@@ -11596,7 +11596,7 @@ void sub_193d8(auto a_0, auto a_1) {
 
 auto sub_1944c(auto a_0) {
     if (a_0 == 1) {
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             if (GAMEPLAY::IS_BIT_SET(g_8EB, 14)) {
                 return 1;
             } else { 
@@ -11609,7 +11609,7 @@ auto sub_1944c(auto a_0) {
         if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${cellphone_flashhand}) > 0) {
             return 1;
         }
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             return 1;
         } else { 
             return 0;
@@ -13479,8 +13479,8 @@ auto sub_1ce93() {
         v_10[v_2/*4*/]/*{4}*/ = v_10[v_32/*4*/];
         v_10[v_32/*4*/]/*{4}*/ = v_34;
         v_3 = sub_1d4c3(v_10[v_2/*4*/]);
-        v_4/*{4}*/ = g_18A70._f7F07[v_3/*29*/]._f3;
-        v_8/*"16"*/ = UI::_GET_LABEL_TEXT(&g_18A70._f7F07[v_3/*29*/]._f7);
+        v_4/*{4}*/ = game_state._f7F07[v_3/*29*/]._f3;
+        v_8/*"16"*/ = UI::_GET_LABEL_TEXT(&game_state._f7F07[v_3/*29*/]._f7);
         if (v_10[v_2/*4*/]._f2 > v_10[v_2/*4*/]._f3) {
             v_10[v_2/*4*/]._f2 = v_10[v_2/*4*/]._f3;
         }
@@ -21657,7 +21657,7 @@ auto sub_2aab3(auto a_0) {
         default:
             break;
         }
-    } else if (g_18A70._f1E27._f14A[53/*6*/] == 0) {
+    } else if (game_state._f1E27._f14A[53/*6*/] == 0) {
         v_4 = "PM_DOPROB";
     } else { }
     return v_4;

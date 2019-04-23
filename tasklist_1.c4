@@ -253,7 +253,7 @@ auto sub_67c(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4, auto a_5, auto a_
 }
 
 auto sub_767() {
-    if ((g_384D._f1 == 1) || (g_384D._f1 == 0)) {
+    if ((current_character._f1 == 1) || (current_character._f1 == 0)) {
         return 1;
     } else { 
         return 0;

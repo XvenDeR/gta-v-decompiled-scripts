@@ -60,7 +60,7 @@ void main() {
         sub_17d();
     }
     g_10FD2._f1 = 0;
-    GAMEPLAY::SET_BIT(&g_18A70._f21CA._f19, 0);
+    GAMEPLAY::SET_BIT(&game_state._f21CA._f19, 0);
     sub_22b();
 }
 

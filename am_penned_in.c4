@@ -8527,7 +8527,7 @@ void sub_cffe() {
 }
 
 void sub_d018() {
-    if (!(g_384D._f1 == 1)) {
+    if (!(current_character._f1 == 1)) {
         if (sub_d14b(0)) {
             sub_d040(0);
         }
@@ -8539,7 +8539,7 @@ void sub_d040(auto a_0) {
     if (g_38EB) {
         sub_d0d7(0, 0);
     }
-    if ((g_384D._f1 == 10) || (g_384D._f1 == 9)) {
+    if ((current_character._f1 == 10) || (current_character._f1 == 9)) {
         GAMEPLAY::SET_BIT(&g_8EC, 16);
     }
     if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING()) {
@@ -8552,12 +8552,12 @@ void sub_d040(auto a_0) {
         GAMEPLAY::CLEAR_BIT(&g_8EB, 30);
     }
     if (!sub_d0b0()) {
-        g_384D._f1 = 3;
+        current_character._f1 = 3;
     }
 }
 
 auto sub_d0b0() {
-    if ((g_384D._f1 == 1) || (g_384D._f1 == 0)) {
+    if ((current_character._f1 == 1) || (current_character._f1 == 0)) {
         return 1;
     } else { 
         return 0;
@@ -8587,7 +8587,7 @@ void sub_d0d7(auto a_0, auto a_1) {
 
 auto sub_d14b(auto a_0) {
     if (a_0 == 1) {
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             if (GAMEPLAY::IS_BIT_SET(g_8EB, 14)) {
                 return 1;
             } else { 
@@ -8600,7 +8600,7 @@ auto sub_d14b(auto a_0) {
         if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${cellphone_flashhand}) > 0) {
             return 1;
         }
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             return 1;
         } else { 
             return 0;
@@ -10395,7 +10395,7 @@ auto sub_10150(auto a_0) {
 }
 
 auto sub_10199(auto a_0) {
-    if (g_10EC5) {
+    if (is_in_transition) {
         if (DECORATOR::DECOR_EXIST_ON(a_0, "Player_Vehicle")) {
             return 1;
         }
@@ -13638,7 +13638,7 @@ void sub_157f0(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4, auto a_5, auto 
     if (a_0._f8 > a_0._f9) {
         a_0._f8 = a_0._f9;
     }
-    if (g_10EC5) {
+    if (is_in_transition) {
         if (GAMEPLAY::ARE_STRINGS_EQUAL(v_14, "am_hot_target")) {
             v_15/*{12}*/ = a_0;
             v_15._fC = a_C;

@@ -63,7 +63,7 @@ auto sub_d2(auto a_0) {
 
 auto sub_10f(auto a_0) {
     if (sub_139(a_0)) {
-        return g_18A70._f7F07[a_0/*29*/];
+        return game_state._f7F07[a_0/*29*/];
     } else if (a_0 != 145) {}
     return 0;
 }

@@ -257,7 +257,7 @@ auto sub_196(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4, auto a_5) {
             while (!SCRIPT::HAS_SCRIPT_LOADED(a_0[a_1._fC/*24*/]._f5)) {
                 sub_b45();
                 if (sub_20ba(PLAYER::PLAYER_PED_ID())) {
-                    if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0) && (!g_10EC5)) {
+                    if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0) && (!is_in_transition)) {
                         sub_8d8(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 2.0, 1, 0x3f000000, 0, 1, 0);
                         VEHICLE::SET_VEHICLE_BRAKE_LIGHTS(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 0);
                     }
@@ -276,7 +276,7 @@ auto sub_196(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4, auto a_5) {
                 if (a_3) {
                     while (!CAM::IS_SCREEN_FADED_OUT()) {
                         if (sub_20ba(PLAYER::PLAYER_PED_ID())) {
-                            if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0) && (!g_10EC5)) {
+                            if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0) && (!is_in_transition)) {
                                 sub_8d8(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 2.0, 1, 0x3f000000, 0, 1, 0);
                                 VEHICLE::SET_VEHICLE_BRAKE_LIGHTS(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 0);
                             }
@@ -675,29 +675,29 @@ auto sub_111c(auto a_0) {
 
 auto sub_112b() {
     sub_1144();
-    return g_18A70._f6EA._f21B._fDDD;
+    return game_state._f6EA._f21B._fDDD;
 }
 
 void sub_1144() {
     if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID())) {
-        if (sub_128a(g_18A70._f6EA._f21B._fDDD) != ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID())) {
+        if (sub_128a(game_state._f6EA._f21B._fDDD) != ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID())) {
             v_2 = sub_124d(PLAYER::PLAYER_PED_ID());
             if (sub_1241(v_2) && ((!sub_b05(14)) || g_18658)) {
-                if ((g_18A70._f6EA._f21B._fDDD != v_2) && sub_1241(g_18A70._f6EA._f21B._fDDD)) {
-                    g_18A70._f6EA._f21B._fDDE = g_18A70._f6EA._f21B._fDDD;
+                if ((game_state._f6EA._f21B._fDDD != v_2) && sub_1241(game_state._f6EA._f21B._fDDD)) {
+                    game_state._f6EA._f21B._fDDE = game_state._f6EA._f21B._fDDD;
                 }
-                g_18A70._f6EA._f21B._fDDF = v_2;
-                g_18A70._f6EA._f21B._fDDD = v_2;
+                game_state._f6EA._f21B._fDDF = v_2;
+                game_state._f6EA._f21B._fDDD = v_2;
                 return ;
             }
         } else { 
-            if (g_18A70._f6EA._f21B._fDDD != 145) {
-                g_18A70._f6EA._f21B._fDDF = g_18A70._f6EA._f21B._fDDD;
+            if (game_state._f6EA._f21B._fDDD != 145) {
+                game_state._f6EA._f21B._fDDF = game_state._f6EA._f21B._fDDD;
             }
             return ;
         }
     }
-    g_18A70._f6EA._f21B._fDDD = 145;
+    game_state._f6EA._f21B._fDDD = 145;
 }
 
 auto sub_1241(auto a_0) {
@@ -718,7 +718,7 @@ auto sub_124d(auto a_0) {
 
 auto sub_128a(auto a_0) {
     if (sub_1241(a_0)) {
-        return g_18A70._f7F07[a_0/*29*/];
+        return game_state._f7F07[a_0/*29*/];
     } else if (a_0 != 145) {}
     return 0;
 }
@@ -858,7 +858,7 @@ auto sub_14ff(auto a_0) {
 
 auto sub_1524(auto a_0) {
     if (a_0 == 1) {
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             if (GAMEPLAY::IS_BIT_SET(g_8EB, 14)) {
                 return 1;
             } else { 
@@ -871,7 +871,7 @@ auto sub_1524(auto a_0) {
         if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${cellphone_flashhand}) > 0) {
             return 1;
         }
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             return 1;
         } else { 
             return 0;
@@ -1042,7 +1042,7 @@ auto sub_1a55(auto a_0) {
     if (GAMEPLAY::ABSF(v_6._f2 - v_3._f2) > 2.9) {
         return 1;
     }
-    if (g_10EC5) {
+    if (is_in_transition) {
         if (!NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(a_0)) {
             return 0;
         }
@@ -1204,7 +1204,7 @@ void sub_1f49(auto a_0, auto a_1) {
     a_0._f7 = "CWASH_WRONGWAY";
     a_0._f8 = "CWASH_UPSIDEDO";
     a_0._f10 = a_1;
-    if (!g_10EC5) {
+    if (!is_in_transition) {
         a_0._f2 = "CWASH_NOMONEY";
         return ;
     }

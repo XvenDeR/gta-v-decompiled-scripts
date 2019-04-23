@@ -19,8 +19,8 @@ void main() {
     while (1) {
         SYSTEM::WAIT(0);
         if (l_18 == 0) {
-            if (g_384D._f1 != 9) {
-                switch (g_384D._f1) {
+            if (current_character._f1 != 9) {
+                switch (current_character._f1) {
                 case 7:
                     if (((l_D2 == 0) && (l_D3 == 0)) && (g_416B == 0)) {
                         sub_9aa();
@@ -31,7 +31,7 @@ void main() {
                     if ((sub_7c0(2, g_382D, 0) && (l_D2 == 0)) && (l_D3 == 0)) {
                         sub_7a0();
                         g_3837 = 1;
-                        if (g_384D._f1 > 3) {
+                        if (current_character._f1 > 3) {
                             if (GAMEPLAY::IS_BIT_SET(g_8EC, 15)) {}
                             sub_776();
                         }
@@ -63,7 +63,7 @@ void main() {
 }
 
 auto sub_117() {
-    if ((((g_384D._f1 == 1) || (g_384D._f1 == 3)) || (g_384D._f1 == 0)) || (g_3815 == 1)) {
+    if ((((current_character._f1 == 1) || (current_character._f1 == 3)) || (current_character._f1 == 0)) || (g_3815 == 1)) {
         g_3840 = 1;
         return 1;
     } else { 
@@ -81,7 +81,7 @@ void sub_15a() {
     case 1:
         break;
     case 2:
-        g_384D._f1 = 3;
+        current_character._f1 = 3;
         sub_738();
         break;
     }
@@ -211,8 +211,8 @@ void sub_451() {
         }
         if (((l_D7 == 0) && (l_D8 == 0)) && (l_D9 == 0)) {
             l_D3 = 0;
-            if (g_384D._f1 > 3) {
-                g_384D._f1 = 7;
+            if (current_character._f1 > 3) {
+                current_character._f1 = 7;
                 UI::CLEAR_HELP(1);
                 g_416D = 1;
                 sub_b96();
@@ -282,7 +282,7 @@ void sub_738() {
 }
 
 auto sub_74d() {
-    if ((g_B49 == 1) || (g_384D._f1 < 7)) {
+    if ((g_B49 == 1) || (current_character._f1 < 7)) {
         g_3840 = 1;
         return 1;
     } else { 
@@ -369,7 +369,7 @@ void sub_8e2() {
 }
 
 auto sub_905() {
-    if (g_10EC5) {
+    if (is_in_transition) {
         return 0;
     } else { 
         v_4 = 0;
@@ -416,7 +416,7 @@ void sub_9aa() {
             v_2 = GRAPHICS::_2DE7EFA66B906036(l_14);
             if (v_2 > -1) {
                 l_17 = l_1A[v_2/*1*/];
-                if (g_384D._f1 > 3) {
+                if (current_character._f1 > 3) {
                     if (g_416B == 0) {
                         sub_3ee(g_383A, "SET_DATA_SLOT_EMPTY", 18.0, 0xbf800000, 0xbf800000, 0xbf800000, 0xbf800000);
                         sub_33b(g_383A, "SET_DATA_SLOT", __678_$BBDA792448DB5A89(18), __678_$BBDA792448DB5A89(0), __678_$BBDA792448DB5A89(0), -1.0, -1.0, "CELL_MSMENU_2", 0, 0, 0, 0);
@@ -433,7 +433,7 @@ void sub_9aa() {
                         GAMEPLAY::CLEAR_BIT(&g_8EB, 17);
                         g_416F = l_17;
                         g_416B = 12;
-                        g_384D._f1 = 8;
+                        current_character._f1 = 8;
                         sub_b2a();
                     }
                 }
@@ -473,7 +473,7 @@ void sub_b96() {
             l_18 = 1;
         } else { 
             g_416D = 1;
-            g_384D._f1 = 3;
+            current_character._f1 = 3;
             sub_738();
         }
     } else { 

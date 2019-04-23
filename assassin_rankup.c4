@@ -30,7 +30,7 @@ void main() {
     }
     while (1) {
         if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID())) {
-            g_18A70._f48A5 += 1;
+            game_state._f48A5 += 1;
             sub_ad();
             SCRIPT::TERMINATE_THIS_THREAD();
         }
@@ -39,7 +39,7 @@ void main() {
 }
 
 void sub_ad() {
-    sub_c5(&g_18A70._f48A5._f1, 2048);
+    sub_c5(&game_state._f48A5._f1, 2048);
 }
 
 void sub_c5(auto a_0, auto a_1) {

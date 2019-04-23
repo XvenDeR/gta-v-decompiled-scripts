@@ -22,8 +22,8 @@ void main() {
     }
     while (1) {
         SYSTEM::WAIT(0);
-        if (g_384D._f1 != 9) {
-            switch (g_384D._f1) {
+        if (current_character._f1 != 9) {
+            switch (current_character._f1) {
             case 7:
                 if (l_15 == 1) {
                     if (sub_31c(2, g_382E, 0)) {
@@ -51,8 +51,8 @@ void main() {
                 if (sub_31c(2, g_382D, 0)) {
                     sub_1a5();
                     g_3837 = 1;
-                    if (g_384D._f1 > 3) {
-                        g_384D._f1 = 7;
+                    if (current_character._f1 > 3) {
+                        current_character._f1 = 7;
                     }
                 }
                 break;
@@ -73,7 +73,7 @@ void main() {
 }
 
 auto sub_126() {
-    if ((((g_384D._f1 == 1) || (g_384D._f1 == 3)) || (g_384D._f1 == 0)) || (g_3815 == 1)) {
+    if ((((current_character._f1 == 1) || (current_character._f1 == 3)) || (current_character._f1 == 0)) || (g_3815 == 1)) {
         g_3840 = 1;
         return 1;
     } else { 
@@ -87,7 +87,7 @@ void sub_169() {
 }
 
 auto sub_17c() {
-    if ((g_B49 == 1) || (g_384D._f1 < 7)) {
+    if ((g_B49 == 1) || (current_character._f1 < 7)) {
         g_3840 = 1;
         return 1;
     } else { 

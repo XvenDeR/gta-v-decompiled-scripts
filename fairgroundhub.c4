@@ -281,7 +281,7 @@ auto sub_2a0(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4, auto a_5) {
             while (!SCRIPT::HAS_SCRIPT_LOADED(a_0[a_1._fC/*24*/]._f5)) {
                 sub_c41();
                 if (sub_5d60(PLAYER::PLAYER_PED_ID())) {
-                    if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0) && (!g_10EC5)) {
+                    if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0) && (!is_in_transition)) {
                         sub_9e2(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 2.0, 1, 0x3f000000, 0, 1, 0);
                         VEHICLE::SET_VEHICLE_BRAKE_LIGHTS(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 0);
                     }
@@ -300,7 +300,7 @@ auto sub_2a0(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4, auto a_5) {
                 if (a_3) {
                     while (!CAM::IS_SCREEN_FADED_OUT()) {
                         if (sub_5d60(PLAYER::PLAYER_PED_ID())) {
-                            if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0) && (!g_10EC5)) {
+                            if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0) && (!is_in_transition)) {
                                 sub_9e2(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 2.0, 1, 0x3f000000, 0, 1, 0);
                                 VEHICLE::SET_VEHICLE_BRAKE_LIGHTS(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 0);
                             }
@@ -688,29 +688,29 @@ auto sub_11ee(auto a_0) {
 
 auto sub_11fd() {
     sub_1216();
-    return g_18A70._f6EA._f21B._fDDD;
+    return game_state._f6EA._f21B._fDDD;
 }
 
 void sub_1216() {
     if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID())) {
-        if (sub_135c(g_18A70._f6EA._f21B._fDDD) != ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID())) {
+        if (sub_135c(game_state._f6EA._f21B._fDDD) != ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID())) {
             v_2 = sub_131f(PLAYER::PLAYER_PED_ID());
             if (sub_1313(v_2) && ((!sub_5d19(14)) || g_18658)) {
-                if ((g_18A70._f6EA._f21B._fDDD != v_2) && sub_1313(g_18A70._f6EA._f21B._fDDD)) {
-                    g_18A70._f6EA._f21B._fDDE = g_18A70._f6EA._f21B._fDDD;
+                if ((game_state._f6EA._f21B._fDDD != v_2) && sub_1313(game_state._f6EA._f21B._fDDD)) {
+                    game_state._f6EA._f21B._fDDE = game_state._f6EA._f21B._fDDD;
                 }
-                g_18A70._f6EA._f21B._fDDF = v_2;
-                g_18A70._f6EA._f21B._fDDD = v_2;
+                game_state._f6EA._f21B._fDDF = v_2;
+                game_state._f6EA._f21B._fDDD = v_2;
                 return ;
             }
         } else { 
-            if (g_18A70._f6EA._f21B._fDDD != 145) {
-                g_18A70._f6EA._f21B._fDDF = g_18A70._f6EA._f21B._fDDD;
+            if (game_state._f6EA._f21B._fDDD != 145) {
+                game_state._f6EA._f21B._fDDF = game_state._f6EA._f21B._fDDD;
             }
             return ;
         }
     }
-    g_18A70._f6EA._f21B._fDDD = 145;
+    game_state._f6EA._f21B._fDDD = 145;
 }
 
 auto sub_1313(auto a_0) {
@@ -731,7 +731,7 @@ auto sub_131f(auto a_0) {
 
 auto sub_135c(auto a_0) {
     if (sub_1313(a_0)) {
-        return g_18A70._f7F07[a_0/*29*/];
+        return game_state._f7F07[a_0/*29*/];
     } else if (a_0 != 145) {}
     return 0;
 }
@@ -871,7 +871,7 @@ auto sub_15d1(auto a_0) {
 
 auto sub_15f6(auto a_0) {
     if (a_0 == 1) {
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             if (GAMEPLAY::IS_BIT_SET(g_8EB, 14)) {
                 return 1;
             } else { 
@@ -884,7 +884,7 @@ auto sub_15f6(auto a_0) {
         if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${cellphone_flashhand}) > 0) {
             return 1;
         }
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             return 1;
         } else { 
             return 0;
@@ -961,10 +961,10 @@ auto<3> sub_1970(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4, auto a_5) {
 
 void sub_19a9(auto a_0, auto a_1, auto a_2, auto a_3, auto a_4) {
     if (a_0 != 198) {
-        if (g_10EC5) {
+        if (is_in_transition) {
             g_2507F3._f4A._fE3[a_0/*1*/] = a_1;
         } else { 
-            g_18A70._f1707._fE3[a_0/*1*/] = a_1;
+            game_state._f1707._fE3[a_0/*1*/] = a_1;
         }
         g_7F9C[a_0/*1*/] = a_2;
         g_8063[a_0/*1*/] = 1;
@@ -1033,7 +1033,7 @@ auto sub_1b09(auto a_0, auto a_1, auto a_2, auto a_3) {
     asm .vardef<F> 9, "[{\"type\":\"field\",\"value\":[{\"offset\":4,\"value\":3}]},{\"type\":\"field\",\"value\":[{\"offset\":8,\"value\":3}]},{\"type\":\"field\",\"value\":[{\"offset\":64,\"value\":3}]},{\"type\":\"field\",\"value\":[{\"offset\":75,\"value\":3}]},{\"type\":\"field\",\"value\":[{\"offset\":91,\"value\":3}]}]"
     sub_248a(&v_9, a_0);
     if (sub_2444()) {
-        v_7 = g_18A70._f1707._fE3[a_0/*1*/];
+        v_7 = game_state._f1707._fE3[a_0/*1*/];
     } else { 
         v_7 = g_2507F3._f4A._fE3[a_0/*1*/];
     }
@@ -2695,10 +2695,10 @@ auto sub_248a(auto a_0, auto a_1) {
 
 auto sub_5ccb(auto a_0) {
     if (a_0 != 198) {
-        if (g_10EC5) {
+        if (is_in_transition) {
             return g_2507F3._f4A._fE3[a_0/*1*/];
         } else { 
-            return g_18A70._f1707._fE3[a_0/*1*/];
+            return game_state._f1707._fE3[a_0/*1*/];
         }
     }
     return 0;

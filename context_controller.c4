@@ -47,19 +47,19 @@ void main() {
     v_7 = 0;
     v_8 = 0;
     v_9 = -1;
-    v_A = g_10EC5;
+    v_A = is_in_transition;
     while (1) {
-        if (g_10EC5) {
+        if (is_in_transition) {
             sub_c1f();
         } else { 
             sub_b7b();
         }
         sub_a38();
-        if (g_10EC5 != v_A) {
+        if (is_in_transition != v_A) {
             sub_a28();
             sub_db8();
             v_4 = -1;
-            v_A = g_10EC5;
+            v_A = is_in_transition;
             while (STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS()) {
                 SYSTEM::WAIT(2000);
             }
@@ -442,7 +442,7 @@ auto sub_8d1(auto a_0) {
 
 auto sub_8fa(auto a_0) {
     if (a_0 == 1) {
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             if (GAMEPLAY::IS_BIT_SET(g_8EB, 14)) {
                 return 1;
             } else { 
@@ -455,7 +455,7 @@ auto sub_8fa(auto a_0) {
         if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${cellphone_flashhand}) > 0) {
             return 1;
         }
-        if (g_384D._f1 > 3) {
+        if (current_character._f1 > 3) {
             return 1;
         } else { 
             return 0;
@@ -534,10 +534,10 @@ void sub_a74(auto a_0) {
     if (SCRIPT::_GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT(${appinternet}) > 0) {
         return ;
     }
-    if (g_10EC5 && sub_b21()) {
+    if (is_in_transition && sub_b21()) {
         return ;
     }
-    if ((!g_10EC5) && sub_b15()) {
+    if ((!is_in_transition) && sub_b15()) {
         return ;
     }
     if (!SCRIPT::HAS_SCRIPT_LOADED("appInternet")) {
